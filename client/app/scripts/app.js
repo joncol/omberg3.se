@@ -19,10 +19,14 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html'
+      .when("/", {
+        templateUrl: "views/main.html"
       })
-      .when('/:page', {
+      .when("/kontakt", {
+        templateUrl: "views/kontakt.html",
+        controller: "ContactsCtrl"
+      })
+      .when("/:page", {
         templateUrl: function (params) {
             return "views/" + params.page + ".html"
         }
@@ -32,6 +36,6 @@ angular
       //   controller: 'AboutCtrl'
       // })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: "/"
       });
   });
