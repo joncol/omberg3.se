@@ -11,6 +11,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Lora|Quicksand|Merriweather">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
@@ -21,30 +22,31 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
+    <header>
+      <a href="#/">
+        <img src="images/omberg3.jpg" />
+      </a>
+    </header>
+    <ul class="menu">
+      <li id="index"><a href="#/">Hem</a></li>
+      <li id="information"><a href="#/information">Information</a></li>
+      <li id="historia"><a href="#/historia">Historia</a></li>
+      <li id="stadgar"><a href="#/stadgar">Stadgar</a></li>
+      <li id="bokning"><a href="#/bokning">Bokning</a></li>
+      <li id="kontakt"><a href="#/kontakt">Kontakt</a></li>
+    </ul>
+
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">client</h3>
-      </div>
-
       <div ng-view=""></div>
-
-      <div class="footer">
-        <p><i class="fa fa-heart"></i> from the Yeoman team</p>
-      </div>
     </div>
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
@@ -70,10 +72,10 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <!-- endbuild -->
-</body>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <!-- endbuild -->
+  </body>
 </html>

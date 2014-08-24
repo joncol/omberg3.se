@@ -1,90 +1,272 @@
-// bower:scss
-// endbower
-
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+h1 {
+  font-family: 'Lora' serif;
+  font-style: italic;
+  clear: both;
+  font-size: 2em;
+  text-rendering: optimizeLegibility;
+  margin-top: 0.1em;
+  margin-bottom: 0.5em;
 }
 
-/* Space out content a bit */
+h2 {
+  font-family: 'Lora' serif;
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 20px 0px 10px;
+}
+
+h3 {
+  font-family: 'Lora' serif;
+  font-style: italic;
+  font-size: 1em;
+  margin: 20px 0px 5px;
+  text-decoration: underline;
+}
+
+p {
+  line-height: 1.4;
+}
+
+a:link, a:visited {
+  color: #00f;
+}
+
 body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-family: 'Lora' serif;
+  font-size: 20px;
+  background-color: #faf9f0;
+  color: #444;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
-
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
+header {
+  font-family: 'Merriweather' serif;
+  padding: 20px 10px 10px;
+  color: #000;
+  font-size: 25px;
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
+  background-color: #fefae1;
+  border-bottom: 2px dotted #f9e356;
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
-  }
+header img {
+  border: 1px solid #b9a106;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+.menu {
+  width: 800px;
+  margin: 10px auto 0;
+  border-radius: 5px;
+  border: 1px solid;
+  border-color: #ca84b5;
+  background-color: #e9cbe0;
+  padding: 10px 0;
 }
+
+.menu ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+.menu li {
+  display: inline;
+  margin: 0 10px 0 10px;
+}
+
+.menu a:link,
+
+.menu a:visited {
+  color: #3a1930;
+  padding: 0 10px;
+  border: none;
+  text-decoration: none;
+}
+
+.menu a {
+  transition-property: background;
+}
+
+.menu a:hover {
+  color: #626;
+  background-color: rgba(175,75,145,0.5);
+  border-radius: 5px;
+  transition-duration: 0.5s;
+}
+
+.menu .selectedItem a:link,
+
+.menu .selectedItem a:visited {
+  color: #faf9f0;
+  background-color: #bd67a4;
+  border-radius: 5px;
+}
+
+.container {
+  width: 800px;
+  margin: 50px auto;
+  overflow: hidden;
+}
+
+.main-content {
+  float: left;
+  width: 500px;
+}
+
+.main-content p {
+  margin-bottom: 20px;
+}
+
+.sidebar {
+  float: left;
+  width: 300px;
+}
+
+.sidebar .widget {
+  border-radius: 10px;
+  border: 1px dashed #666;
+  margin-left: 20px;
+  background-color: #ddc;
+}
+
+.sidebar .widget h1 {
+  margin: 13px 10px 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #ddd;
+  border-radius: 2px 2px 0px 0px;
+  margin-bottom: 10px;
+}
+
+.sidebar .widget h2 {
+  font-family: 'Lora' serif;
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 20px 10px 10px;
+}
+
+.sidebar .widget p {
+  font-family: 'Lora' serif;
+  font-size: 15px;
+  padding: 0px 10px;
+  margin-bottom: 10px;
+}
+
+.contact {
+  border-radius: 10px;
+  border: 1px solid #666;
+  margin: 20px 0;
+  background-color: #ddc;
+  padding: 10px 10px;
+  width: 550px;
+  height: 100px;
+}
+
+.contact img {
+  border: 1px solid #888;
+  float: left;
+  margin-right: 10px;
+}
+
+.contact h1 {
+  margin: 13px 10px 4px;
+  padding-bottom: 10px;
+  border-bottom: 1px dotted #ddd;
+  border-radius: 2px 2px 0px 0px;
+  margin-bottom: 10px;
+}
+
+.contact h2 {
+  font-family: 'Lora' serif;
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 20px 10px 10px;
+}
+
+.contact .row {
+  font-family: 'Lora' serif;
+  font-size: 16px;
+  margin: 0px 10px;
+  margin-right: 10px;
+  line-height: 1.4;
+}
+
+.login {
+  width: 350px;
+  line-height: 2;
+  margin-bottom: 40px;
+}
+
+.login input {
+  float: right;
+  line-height: 2;
+}
+
+.loginMessage {
+  color: #f00;
+}
+
+.loginBox {
+  font-size: 0.8em;
+  width: 150px;
+  background-color: rgba(159,175,223,0.25);
+  border: 1px solid;
+  border-radius: 3px;
+  border-color: #000;
+  color: rgba(0,0,0,0.7);
+  position: fixed;
+  top: 0;
+  margin: 10px;
+  padding: 3px 5px;
+}
+
+.loginBox h1 {
+  font-family: 'Lora' serif;
+  font-style: normal;
+  font-size: 1em;
+  text-rendering: optimizeLegibility;
+  margin-bottom: 0em;
+}
+
+.logoutBox {
+  font-size: 0.8em;
+  background-color: #c10;
+  border: 1px solid;
+  border-radius: 3px;
+  border-color: #000;
+  color: #fff;
+  position: fixed;
+  top: 0px;
+  margin: 10px;
+  padding: 3px 10px;
+}
+
+footer {
+  width: 800px;
+  margin: 100px auto 50px;
+  border-top: 1px dotted #ccc;
+  padding-top: 5px;
+  font-size: 13px;
+  color: #a0a0a0;
+}
+
+.calendar {
+  font-size: 0.8em;
+  margin-bottom: 30px;
+  list-style-type: none;
+  width: 500px;
+}
+
+.calendar ul {
+  padding: 5px 10px;
+}
+
+.calendar li {
+  background-color: #ddc;
+  float: left;
+  width: 13%;
+  margin: 0;
+  padding: 4px 0;
+  text-align: center;
+  border-bottom: 1px solid;
+  border-left: 1px solid;
+  border-color: #888;
+}
+
