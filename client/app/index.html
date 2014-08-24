@@ -27,14 +27,17 @@
         <img src="images/omberg3.jpg" />
       </a>
     </header>
-    <ul class="menu">
-      <li id="index"><a href="#/">Hem</a></li>
-      <li id="information"><a href="#/information">Information</a></li>
-      <li id="historia"><a href="#/historia">Historia</a></li>
-      <li id="stadgar"><a href="#/stadgar">Stadgar</a></li>
-      <li id="bokning"><a href="#/bokning">Bokning</a></li>
-      <li id="kontakt"><a href="#/kontakt">Kontakt</a></li>
-    </ul>
+
+    <div ng-controller="MenuCtrl">
+      <ul class="menu">
+        <li id="index" ng-class="{active: isActive('/')}"><a href="/">Hem</a></li>
+        <li id="information" ng-class="{active: isActive('/information')}"><a href="#/information">Information</a></li>
+        <li id="historia" ng-class="{active: isActive('/historia')}"><a href="#/historia">Historia</a></li>
+        <li id="stadgar" ng-class="{active: isActive('/stadgar')}"><a href="#/stadgar">Stadgar</a></li>
+        <li id="bokning" ng-class="{active: isActive('/bokning')}"><a href="#/bokning">Bokning</a></li>
+        <li id="kontakt" ng-class="{active: isActive('/kontakt')}"><a href="#/kontakt">Kontakt</a></li>
+      </ul>
+    </div>
 
     <div class="container">
       <div ng-view=""></div>
@@ -61,6 +64,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
@@ -75,7 +79,7 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/menu.js"></script>
     <!-- endbuild -->
   </body>
 </html>

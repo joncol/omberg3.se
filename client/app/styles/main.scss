@@ -92,9 +92,7 @@ header img {
   transition-duration: 0.5s;
 }
 
-.menu .selectedItem a:link,
-
-.menu .selectedItem a:visited {
+.menu .active a:link, .menu .active a:visited {
   color: #faf9f0;
   background-color: #bd67a4;
   border-radius: 5px;
@@ -250,11 +248,11 @@ footer {
 .calendar {
   font-size: 0.8em;
   margin-bottom: 30px;
-  list-style-type: none;
   width: 500px;
 }
 
 .calendar ul {
+  list-style-type: none;
   padding: 5px 10px;
 }
 
