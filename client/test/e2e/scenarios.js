@@ -1,6 +1,6 @@
 "use strict";
 
-describe("Omberg III page", function() {
+describe("Omberg III page", function () {
 
   // it("should redirect index.html to index.html#/phones", function() {
   //   browser.get('app/index.html');
@@ -10,18 +10,19 @@ describe("Omberg III page", function() {
   // });
 
 
-  describe("Contact list view", function() {
+  describe("Contact list view", function () {
 
     beforeEach(function() {
-      browser.get("app/index.html#/kontakt.html");
+      browser.get("#/index.html#/kontakt.html");
     });
 
+    it("should have the correct title", function () {
+      expect(browser.getTitle()).toEqual("Kontakt");
+    });
 
-    it("should have the correct header", function() {
-
+    it("should have the correct header", function () {
       var header = element.all(by.css("h1")).first();
-
-      expect(header).toBe("Kontakt");
+      expect(header.getText()).toBe("Kontaktuppgifter");
     });
 
   //   it('should filter the phone list as user types into the search box', function() {

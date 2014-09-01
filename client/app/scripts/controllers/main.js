@@ -7,11 +7,19 @@
  * # MainCtrl
  * Controller of the clientApp
  */
-// angular.module('clientApp')
-//   .controller('MainCtrl', function ($scope) {
-//     $scope.awesomeThings = [
-//       'HTML5 Boilerplate',
-//       'AngularJS',
-//       'Karma'
-//     ];
-//   });
+angular.module('clientApp')
+  .controller('MainCtrl', function ($scope, $route, $routeParams) {
+      $scope.$on('$routeChangeSuccess', function (event, current, previous) {
+          $scope.pageTitle = $route.current.pageTitle ||
+            capitalizeFirstLetter($routeParams.page);
+      });
+  });
+
+function capitalizeFirstLetter(string)
+{
+    if (!string || string === "")
+        return "";
+    else
+        return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
