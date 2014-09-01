@@ -4,7 +4,10 @@
     Här följer kontaktuppgifter för oss i styrelsen
   </p>
 
-  <div class="contacts">
+  <div class="contacts" ng-controller="ContactsCtrl">
+    <div class = "contact" ng-repeat="person in contacts">
+      <div class="row"><u>{{person.name}}</u></div>
+    </div>
   </div>
 </div>
 

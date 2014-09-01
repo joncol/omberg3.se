@@ -1,0 +1,43 @@
+[
+    {
+        "name": "Fredrik Söderqvist",
+        "image": "fredrik.jpg",
+        "description": "Ordförande, uppgång J",
+        "mail1": "fredrik (punkt) soderqvist (at) omberg3 (punkt) se",
+        "mail2": "",
+        "phone": "0706-690897"
+    },
+    {
+        "name": "David Elmqvist",
+        "image": "david.jpg",
+        "description": "Uppgång E",
+        "mail1": "david (punkt) elmqvist (at) gmail (punkt) com",
+        "mail2": "david (punkt) elmqvist (at) omberg3 (punkt) se",
+        "phone": "073-3266134"
+    },
+    {
+        "name": "Jonas Collberg",
+        "image": "jonas.jpg",
+        "description": "Uppgång I",
+        "mail1": "jonas (punkt) collberg (at) gmail (punkt) com",
+        "mail2": "jonas (punkt) collberg (at) omberg3 (punkt) se",
+        "phone": "031-212710"
+    },
+    {
+        "name": "Matilda Lindén",
+        "image": "matilda.jpg",
+        "description": "Uppgång C",
+        "mail1": "am (punkt) matilda (punkt) linden (at) gmail (punkt) com",
+        "mail2": "matilda (punkt) linden (at) omberg3 (punkt) se",
+        "phone": "076-1128358"
+    },
+    {
+        "name": "Lennart Falk",
+        "image": "lennart_falk.jpg",
+        "description": "Representant HSB",
+        "mail1": "lennart (punkt) falk (at) gbg (punkt) hsb (punkt) se",
+        "mail2": "",
+        "phone": ""
+    }
+]
+

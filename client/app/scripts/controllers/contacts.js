@@ -8,6 +8,7 @@
  * Controller for contact list
  */
 angular.module('clientApp')
-  .controller('ContactsCtrl', function ($scope) {
-  });
+  .controller('ContactsCtrl', ["$scope", "Contacts", function ($scope, Contacts) {
+      $scope.contacts = Contacts.query();
+  }]);
 
