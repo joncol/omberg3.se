@@ -9,7 +9,7 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  chromeOnly: true,
+  // chromeOnly: true,
 
   baseUrl: 'http://localhost:9000/',
 
@@ -17,5 +17,7 @@ exports.config = {
 
   jasmineNodeOpts: {
     defaultTimeoutInterval: 30000
-  }
+  },
+
+  // chromeDriver: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 };

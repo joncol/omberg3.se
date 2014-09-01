@@ -13,11 +13,11 @@ describe("Omberg III page", function () {
   describe("Contact list view", function () {
 
     beforeEach(function() {
-      browser.get("#/index.html#/kontakt.html");
+      browser.get("#/kontakt");
     });
 
     it("should have the correct title", function () {
-      expect(browser.getTitle()).toEqual("Kontakt");
+      expect(browser.getTitle()).toEqual("Kontaktuppgifter");
     });
 
     it("should have the correct header", function () {
