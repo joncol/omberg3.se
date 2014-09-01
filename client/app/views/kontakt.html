@@ -6,7 +6,12 @@
 
   <div class="contacts" ng-controller="ContactsCtrl">
     <div class = "contact" ng-repeat="person in contacts">
+      <image ng-src="images/{{person.image}}" />
       <div class="row"><u>{{person.name}}</u></div>
+      <div class="row">{{person.description}}</div>
+      <div class="row">{{person.mail1}}</div>
+      <div class="row">{{person.mail2}}</div>
+      <div class="row">{{person.phone}}</div>
     </div>
   </div>
 </div>
