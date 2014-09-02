@@ -25,6 +25,39 @@ describe("Omberg III page", function () {
       expect(header.getText()).toBe("Kontaktuppgifter");
     });
 
+  });
+
+  describe("Booking view", function () {
+
+    beforeEach(function() {
+      browser.get("#/bokning");
+    });
+
+    it("should have the correct title", function () {
+      expect(browser.getTitle()).toEqual("Bokning");
+    });
+
+    it("should have the correct header", function () {
+      var header = element.all(by.css("h1")).first();
+      expect(header.getText()).toBe("Övernattningslägenheten");
+    });
+
+    describe("calendar", function () {
+        it("should contain the abbreviated names of the weekdays", function () {
+            var listItems = element.all(by.css(".calendar ul li"));
+            expect(listItems).not.toBeUndefined();
+            expect(listItems.get(0).getText()).toBe("Mån");
+            expect(listItems.get(1).getText()).toBe("Tis");
+            expect(listItems.get(2).getText()).toBe("Ons");
+            expect(listItems.get(3).getText()).toBe("Tor");
+            expect(listItems.get(4).getText()).toBe("Fre");
+            expect(listItems.get(5).getText()).toBe("Lör");
+            expect(listItems.get(6).getText()).toBe("Sön");
+        });
+    });
+
+  });
+
   //   it('should filter the phone list as user types into the search box', function() {
   //
   //     var phoneList = element.all(by.repeater('phone in phones'));
@@ -76,7 +109,6 @@ describe("Omberg III page", function () {
   //       expect(url.split('#')[1]).toBe('/phones/nexus-s');
   //     });
   //   });
-  });
   //
   //
   // describe('Phone detail view', function() {
