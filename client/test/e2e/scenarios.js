@@ -44,7 +44,7 @@ describe("Omberg III page", function () {
 
     describe("calendar", function () {
         it("should contain the abbreviated names of the weekdays", function () {
-            var listItems = element.all(by.css(".calendar ul li"));
+            var listItems = element.all(by.css(".calendar:nth-child(1) ul li"));
             expect(listItems).not.toBeUndefined();
             expect(listItems.get(0).getText()).toBe("Mån");
             expect(listItems.get(1).getText()).toBe("Tis");
@@ -53,6 +53,15 @@ describe("Omberg III page", function () {
             expect(listItems.get(4).getText()).toBe("Fre");
             expect(listItems.get(5).getText()).toBe("Lör");
             expect(listItems.get(6).getText()).toBe("Sön");
+        });
+
+        it("should show more than 26 days and less than 40 days", function () {
+            element(by.css(".calendar:nth-child(1)"))
+                .then(function (cal) {
+                    var listItems = cal.all(by.css("ul li"));
+                    expect(listItems.count()).toBeGreaterThan(26);
+                    expect(listItems.count()).toBeLessThan(40);
+                });
         });
     });
 
