@@ -56,7 +56,7 @@ describe("Omberg III page", function () {
         });
 
         it("should show more than 26 days and less than 40 days", function () {
-            element(by.css(".calendar:nth-child(1)"))
+            element.all(by.css(".calendar")).first()
                 .then(function (cal) {
                     var listItems = cal.all(by.css("ul li"));
                     expect(listItems.count()).toBeGreaterThan(26);

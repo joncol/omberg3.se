@@ -1,7 +1,8 @@
-var contactServices = angular.module("contactServices", ["ngResource"]);
+var contactsService = angular.module("contactsService", ["ngResource"]);
 
-contactServices.factory("Contacts", ["$resource", function ($resource) {
+contactsService.factory("Contacts", ["$resource", function ($resource) {
     return $resource("data/contacts.json", {}, {
         query: { method: "GET", isArray: true }
     });
 }]);
+

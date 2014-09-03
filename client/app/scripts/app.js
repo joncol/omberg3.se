@@ -16,7 +16,8 @@ angular
             "ngRoute",
             "ngSanitize",
             "ngTouch",
-            "contactServices"
+            "bookingService",
+            "contactsService"
             ])
     .config(function ($routeProvider) {
         $routeProvider

@@ -23,7 +23,7 @@ describe("ContactsCtrl", function () {
     }));
 
     it("should attach a contact list to scope", function () {
-        expect(typeof scope.contacts).toBeDefined();
+        expect(scope.contacts).toBeDefined();
     });
 
     describe("contacts list", function () {
