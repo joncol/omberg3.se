@@ -16,7 +16,7 @@ describe("BookingCtrl", function () {
             $scope: scope
         });
         $httpBackend = _$httpBackend_;
-        $httpBackend.expectGET("bookings/2014/09")
+        $httpBackend.expectGET("bokning/2014/09")
             .respond(bookings);
     }));
 

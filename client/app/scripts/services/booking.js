@@ -1,7 +1,7 @@
 var bookingService = angular.module("bookingService", ["ngResource"]);
 
 bookingService.factory("Booking", ["$resource", function ($resource) {
-    return $resource("bookings/:year/:month", {}, {
+    return $resource("bokning/:year/:month", {}, {
         query: {
             method: "GET",
             params: {
