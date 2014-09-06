@@ -19,32 +19,35 @@ angular
             "bookingService",
             "contactsService"
             ])
-    .config(function ($routeProvider) {
+    .config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
         $routeProvider
+            .when("/", {
+                templateUrl: "views/main.html",
+                pageTitle: "Hem"
+            })
 
-        .when("/", {
-            templateUrl: "views/main.html",
-            pageTitle: "Hem"
-        })
+            .when("/kontakt", {
+                templateUrl: "views/kontakt.html",
+                controller: "ContactsCtrl",
+                pageTitle: "Kontaktuppgifter"
+            })
 
-        .when("/kontakt", {
-            templateUrl: "views/kontakt.html",
-            controller: "ContactsCtrl",
-            pageTitle: "Kontaktuppgifter"
-        })
+            .when("/:page", {
+                templateUrl: function (params) {
+                    return "views/" + params.page + ".html"
+                }
+            })
 
-        .when("/:page", {
-            templateUrl: function (params) {
-                return "views/" + params.page + ".html"
-            }
-        })
+            // .when('/about', {
+            //   templateUrl: 'views/about.html',
+            //   controller: 'AboutCtrl'
+            // })
 
-        // .when('/about', {
-        //   templateUrl: 'views/about.html',
-        //   controller: 'AboutCtrl'
-        // })
+            .otherwise({
+                redirectTo: "/"
+            });
 
-        .otherwise({
-            redirectTo: "/"
-        });
-    });
+        // if (window.history && window.history.pushState) {
+        //     $locationProvider.html5Mode(true);
+        // }
+    }]);

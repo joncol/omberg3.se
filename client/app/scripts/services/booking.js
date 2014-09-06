@@ -1,6 +1,6 @@
 var bookingService = angular.module("bookingService", ["ngResource"]);
 
-bookingService.factory("Booking", ["$resource", function ($resource) {
+bookingService.factory("bookingService", ["$resource", function ($resource) {
     return $resource("bokning/:year/:month", {}, {
         query: {
             method: "GET",
@@ -8,7 +8,7 @@ bookingService.factory("Booking", ["$resource", function ($resource) {
                 year: "2014",
                 month: "09",
             },
-            isArray: true
+            isArray: false
         }
     });
 }]);

@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module("clientApp")
-    .controller("BookingCtrl", ["$scope", "Booking", function ($scope, Booking) {
-        $scope.bookings = Booking.query();
+    .controller("BookingCtrl", ["$scope", "bookingService", function ($scope, bookingService) {
+        $scope.bookings = bookingService.query();
     }]);
 
