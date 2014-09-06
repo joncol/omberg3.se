@@ -21,17 +21,15 @@
                     month: today.month() + 1
                 }).$promise.then(
                     function (bookings) {
-                        console.log("bookings: " + $filter("json")(bookings));
+                        showMonthAndYear(calendar, today);
+                        clearDays(calendar);
+                        appendDays(calendar, today, bookings);
+                        addBorders(calendar);
                     },
                     function (error) {
                         console.log("error getting bookings");
                     }
                 );
-
-                showMonthAndYear(calendar, today);
-                clearDays(calendar);
-                appendDays(calendar, today);
-                addBorders(calendar);
             }
 
             function showMonthAndYear(calendar, today) {
@@ -89,7 +87,7 @@
                 $(calendar).find("li").slice(7).remove();
             }
 
-            function appendDays(calendar, today) {
+            function appendDays(calendar, today, bookings) {
                 var first = moment(today).date(1);
                 var daysInMonth = today.daysInMonth();
 
@@ -101,16 +99,29 @@
                     var css = "";
                     if (index <= 0) {
                         dayIndex = moment(today).date(1).add(index - 1, "days").date();
-                        css = "color: #aaa;";
+                        css += "color: #aaa;";
                     } else {
                         dayIndex = index;
                     }
+                    var _class = ""
+                    if (isBooked(dayIndex, bookings)) {
+                        _class = "booked";
+                    }
+
                     var li = $("<li/>", {
-                        style: css,
-                        html: dayIndex
+                        "style": css,
+                        "class": _class,
+                        "html": dayIndex
                     });
                     $(calendar).find("ul").append(li);
                 } while (++index <= daysInMonth);
+            }
+
+            function isBooked(dayIndex, bookings) {
+                return bookings.some(function (booking) {
+                    return (dayIndex >= booking.startDay &&
+                            dayIndex <= booking.endDay);
+                });
             }
 
             function addBorders(calendar) {

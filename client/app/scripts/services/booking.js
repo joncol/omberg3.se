@@ -8,7 +8,7 @@ bookingService.factory("bookingService", ["$resource", function ($resource) {
                 year: "2014",
                 month: "09",
             },
-            isArray: false
+            isArray: true
         }
     });
 }]);
