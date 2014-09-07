@@ -27,6 +27,7 @@
                     },
                     function (error) {
                         console.log("error getting bookings");
+                        redrawCalendar(calendar, today, []);
                     }
                 );
             }
