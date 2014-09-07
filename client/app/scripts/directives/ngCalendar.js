@@ -3,28 +3,27 @@
 (function () {
     var directive = ["$compile", "bookingService", "$filter",
         function ($compile, bookingService, $filter) {
+            var bookings;
+
             function controller($scope) {
                 // $scope.bookings = bookingService.query({ year: today});
                 // console.log($scope.bookings);
             }
 
             function link(scope, element, attrs) {
-            var calendar = angular.element(element).find(".calendar");
-            var today = moment();
-            updateCalendar(calendar, today);
-            // $compile(x)(scope);
+                var calendar = angular.element(element).find(".calendar");
+                var today = moment();
+                updateCalendar(calendar, today);
+                // $compile(x)(scope);
             }
 
             function updateCalendar(calendar, today) {
-                var bookings = bookingService.query({
+                bookings = bookingService.query({
                     year: today.year(),
                     month: today.month() + 1
                 }).$promise.then(
                     function (bookings) {
-                        showMonthAndYear(calendar, today);
-                        clearDays(calendar);
-                        appendDays(calendar, today, bookings);
-                        addBorders(calendar);
+                        redrawCalendar(calendar, today, bookings);
                     },
                     function (error) {
                         console.log("error getting bookings");
@@ -32,7 +31,14 @@
                 );
             }
 
-            function showMonthAndYear(calendar, today) {
+            function redrawCalendar(calendar, today, bookings) {
+                showMonthAndYear(calendar, today, bookings);
+                clearDays(calendar);
+                appendDays(calendar, today, bookings);
+                addBorders(calendar);
+            }
+
+            function showMonthAndYear(calendar, today, bookings) {
                 var month = today.month() + 1;
                 var monthName = getMonthName(month);
 
@@ -52,12 +58,12 @@
                     angular.element(calendar).prepend(timeElem);
                     angular.element(calendar).find("#prev-month").on("click", function (ev) {
                         ev.preventDefault();
-                        updateCalendar(calendar, today.subtract(1, "months"));
+                        redrawCalendar(calendar, today.subtract(1, "months"), bookings);
                     });
 
                     angular.element(calendar).find("#next-month").on("click", function (ev) {
                         ev.preventDefault();
-                        updateCalendar(calendar, today.add(1, "months"));
+                        redrawCalendar(calendar, today.add(1, "months"), bookings);
                     });
                 }
             }
@@ -95,32 +101,33 @@
                 if (index == 2)
                     index -= 7;
                 do {
-                    var dayIndex;
+                    var date = moment(today).date(1).add(index - 1, "days");
+
                     var css = "";
                     if (index <= 0) {
-                        dayIndex = moment(today).date(1).add(index - 1, "days").date();
                         css += "color: #aaa;";
-                    } else {
-                        dayIndex = index;
                     }
+
                     var _class = ""
-                    if (isBooked(dayIndex, bookings)) {
+                    if (isBooked(date, bookings)) {
                         _class = "booked";
                     }
 
                     var li = $("<li/>", {
                         "style": css,
                         "class": _class,
-                        "html": dayIndex
+                        "html": date.date()
                     });
                     $(calendar).find("ul").append(li);
                 } while (++index <= daysInMonth);
             }
 
-            function isBooked(dayIndex, bookings) {
+            function isBooked(date, bookings) {
                 return bookings.some(function (booking) {
-                    return (dayIndex >= booking.startDay &&
-                            dayIndex <= booking.endDay);
+                    return ((date.isAfter(booking.startDate, "day") ||
+                             date.isSame(booking.startDate, "day")) &&
+                            (date.isBefore(booking.endDate, "day") ||
+                             date.isSame(booking.endDate, "day")));
                 });
             }
 
