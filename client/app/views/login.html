@@ -1,0 +1,19 @@
+<div class="main-content">
+  <form class=login name="loginForm" action="/login" method="post" ng-model="user" novalidate>
+    <div style="float: 'left';">
+      <label>Användarnamn:</label>
+      <input type="text" name="username" ng-model="user.username" required />
+    </div>
+    <div style="float: 'left';">
+      <label>Lösenord:</label>
+      <input type="password" name="password" ng-model="user.password" required />
+    <div>
+      <input type="submit" value="Logga in" ng-disabled="!loginForm.$valid" />
+    </div>
+  </form>
+
+  <!-- if loginMessage &#38;&#38; loginMessage.length -->
+  <!--   .loginMessage -->
+  <!--     p #{loginMessage} -->
+</div>
+
