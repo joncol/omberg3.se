@@ -1,12 +1,12 @@
 "use strict";
 
 (function () {
-    var directive = ["$compile", "bookingService", "$filter",
-        function ($compile, bookingService, $filter) {
+    var directive = ["$compile", "BookingService", "$filter",
+        function ($compile, BookingService, $filter) {
             var bookings;
 
             function controller($scope) {
-                // $scope.bookings = bookingService.query({ year: today});
+                // $scope.bookings = BookingService.query({ year: today});
                 // console.log($scope.bookings);
             }
 
@@ -18,7 +18,7 @@
             }
 
             function updateCalendar(calendar, today) {
-                bookings = bookingService.query({
+                bookings = BookingService.query({
                     year: today.year(),
                     month: today.month() + 1
                 }).$promise.then(

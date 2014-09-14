@@ -1,14 +1,16 @@
-<div class="main-content">
-  <div class="my-container">
-    <form class="form-signin" name="loginForm" action="/login" method="post" ng-model="user" novalidate>
-      <input type="text" class="input-block-level" name="username" placeholder="Användarnamn" ng-model="user.username" required>
-      <input type="password" class="input-block-level" name="password" placeholder="Lösenord" ng-model="user.password" required>
+<div class="main-content" ng-init="message=message">
+  <div class="my-container" ng-controller="AdminUserCtrl">
+    <form class="form-signin" name="loginForm" ng-submit="login(credentials)" novalidate>
+      <input type="text" class="input-block-level" name="username" placeholder="Användarnamn" ng-model="credentials.username" required>
+      <input type="password" class="input-block-level" name="password" placeholder="Lösenord" ng-model="credentials.password" required>
       <button class="btn btn-large btn-primary" type="submit" ng-disabled="!loginForm.$valid">Logga in</button>
+
+      <div class="login-message">
+        <span>
+          Login message: {{message}}
+        </span>
+      </div>
     </form>
   </div>
-
-  <!-- if loginMessage &#38;&#38; loginMessage.length -->
-  <!--   .loginMessage -->
-  <!--     p #{loginMessage} -->
 </div>
 

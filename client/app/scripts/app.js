@@ -9,32 +9,35 @@
  * Main module of the application.
  */
 angular
-    .module("clientApp", [
-            "ngAnimate",
-            "ngCookies",
-            "ngResource",
-            "ngRoute",
-            "ngSanitize",
-            "ngTouch",
-            "bookingService",
-            "contactsService"
+    .module('clientApp', [
+            'ngAnimate',
+            'ngCookies',
+            'ngResource',
+            'ngRoute',
+            'ngSanitize',
+            'ngTouch',
+            'BookingService',
+            'ContactsService',
+            'AuthenticationService',
+            'UserService'
             ])
-    .config(["$routeProvider", "$locationProvider", function ($routeProvider, $locationProvider) {
+    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
         $routeProvider
-            .when("/", {
-                templateUrl: "views/main.html",
-                pageTitle: "Hem"
+            .when('/', {
+                templateUrl: 'views/main.html',
+                pageTitle: 'Hem'
             })
 
-            .when("/kontakt", {
-                templateUrl: "views/kontakt.html",
-                controller: "ContactsCtrl",
-                pageTitle: "Kontaktuppgifter"
+            .when('/kontakt', {
+                templateUrl: 'views/kontakt.html',
+                controller: 'ContactsCtrl',
+                pageTitle: 'Kontaktuppgifter'
             })
 
-            .when("/:page", {
+            .when('/:page', {
+                message: 'yo fosHO!',
                 templateUrl: function (params) {
-                    return "views/" + params.page + ".html"
+                    return 'views/' + params.page + '.html'
                 }
             })
 
@@ -44,7 +47,7 @@ angular
             // })
 
             .otherwise({
-                redirectTo: "/"
+                redirectTo: '/'
             });
 
         // if (window.history && window.history.pushState) {

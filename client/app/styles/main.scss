@@ -60,7 +60,7 @@ header img {
   border-color: #ca84b5;
   background-color: #e9cbe0;
   padding: 10px 0;
-  box-shadow: 0 0 5px #888;
+  box-shadow: 0 0 10px #888;
 }
 
 .menu ul {
@@ -204,13 +204,14 @@ header img {
   color: #bd67a4;
 }
 
-.loginMessage {
+.login-message {
   color: #f00;
+  margin-top: 20px;
 }
 
 .form-signin {
   max-width: 300px;
-  padding: 19px 29px 29px;
+  padding: 20px 30px 20px;
   margin: 0 auto 20px;
   background-color: #fff;
   border: 1px solid #e5e5e5;
