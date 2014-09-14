@@ -54,12 +54,13 @@ header img {
 
 .menu {
   width: 800px;
-  margin: 10px auto 0;
+  margin: 20px auto 0;
   border-radius: 5px;
   border: 1px solid;
   border-color: #ca84b5;
   background-color: #e9cbe0;
   padding: 10px 0;
+  box-shadow: 0 0 5px #888;
 }
 
 .menu ul {
@@ -98,7 +99,7 @@ header img {
   border-radius: 5px;
 }
 
-.container {
+.my-container {
   width: 800px;
   margin: 50px auto;
   overflow: hidden;
@@ -154,8 +155,8 @@ header img {
   margin: 20px 0;
   background-color: #ddc;
   padding: 10px 10px;
-  width: 550px;
-  height: 100px;
+  width: 600px;
+  height: 120px;
 }
 
 .contact img {
@@ -179,27 +180,59 @@ header img {
   margin: 20px 10px 10px;
 }
 
-.contact .row {
+.contact .contact-row {
   font-family: 'Lora', serif;
-  font-size: 16px;
+  font-size: 0.8em;
   margin: 0px 10px;
   margin-right: 10px;
   line-height: 1.4;
 }
 
-.login {
-  width: 350px;
-  line-height: 2;
-  margin-bottom: 40px;
+.gear-icon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  // filter: brightness(50%);
 }
 
-.login input {
-  float: right;
-  line-height: 2;
+.gear-icon .dropdown span.glyphicon {
+  color: #e9cbe0;
+  font-size: 1.2em;
+}
+
+.gear-icon .dropdown span.glyphicon:hover {
+  color: #bd67a4;
 }
 
 .loginMessage {
   color: #f00;
+}
+
+.form-signin {
+  max-width: 300px;
+  padding: 19px 29px 29px;
+  margin: 0 auto 20px;
+  background-color: #fff;
+  border: 1px solid #e5e5e5;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+  box-shadow: 0 1px 2px rgba(0,0,0,.05);
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+
+.form-signin input[type="text"],
+.form-signin input[type="password"] {
+  font-size: 16px;
+  height: auto;
+  margin-bottom: 15px;
+  padding: 7px 9px;
 }
 
 .loginBox {
