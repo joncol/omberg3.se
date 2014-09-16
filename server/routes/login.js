@@ -6,7 +6,9 @@ module.exports = function (app, passport) {
     //     // res.send('welcome: ' + req.user.username);
     // });
 
-    app.post('/login', passport.authenticate('local'), function (req, res) {
+    app.post('/login', passport.authenticate('local', {
+        failureRedirect: '#/views/bokning'
+    }), function (req, res) {
         console.log('In the callback');
         console.log('  req.user.username: ' + req.user.username);
         res.send('welcome: ' + req.user.username);

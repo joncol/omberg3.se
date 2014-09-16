@@ -35,7 +35,6 @@ angular
             })
 
             .when('/:page', {
-                message: 'yo fosHO!',
                 templateUrl: function (params) {
                     return 'views/' + params.page + '.html'
                 }
