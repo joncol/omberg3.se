@@ -23,7 +23,6 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, "public")));
 
 function authSerializer(user, done) {
     // if (user.authType == "local")
@@ -31,6 +30,8 @@ function authSerializer(user, done) {
 }
 
 function serializeLocalUser(user, done) {
+    console.log('in serializeLocalUser()');
+    console.log('  user.username: ' + user.username);
     done(null, {
         username: user.username,
         authType: user.authType,
@@ -39,10 +40,11 @@ function serializeLocalUser(user, done) {
 }
 
 function authDeserializer(user, done) {
+    console.log('in authDeserializer()');
     done(null, user);
 }
 
-passport.use(new LocalStrategy(function(username, password, done) {
+passport.use(new LocalStrategy(function (username, password, done) {
     console.log('In LocalStrategy');
 
     User.findOne({ username: username }, function (err, user) {

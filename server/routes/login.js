@@ -1,18 +1,17 @@
 module.exports = function (app, passport) {
-    app.post('/login', function (req, res) {
-        console.log('yo! POST /login');
-        res.end('hi there');
-        // res.send('welcome: ' + req.user.username);
-    });
-
-    // app.post('/login', passport.authenticate('local', {
-    //     // successRedirect: '/',
-    //     // failureRedirect: '/#/login_failed'
-    //     // failureFlash: true
-    // }), function (req, res) {
-    //     res.send('welcome: ' + req.user.username);
-    //     // res.render('/');
+    // app.post('/login', function (req, res) {
+    //     console.log('yo! POST /login');
+    //     console.log('req.param.username: ' + req.param('username', null));
+    //     res.end('hi there');
+    //     // res.send('welcome: ' + req.user.username);
     // });
+
+    app.post('/login', passport.authenticate('local'), function (req, res) {
+        console.log('In the callback');
+        console.log('  req.user.username: ' + req.user.username);
+        res.send('welcome: ' + req.user.username);
+        // res.render('/');
+    });
 
     // app.post("/login", passport.authenticate("localDB", {
     //     successRedirect: "/",

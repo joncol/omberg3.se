@@ -5,30 +5,18 @@ angular.module('clientApp')
         $scope.message = 'yo bro';
 
         $scope.login = function (credentials) {
-            UserService.login(credentials).success(function(data) {
+            UserService.login(credentials)
+                .success(function (data) {
                     console.log('login success');
                     AuthenticationService.isLoggedIn = true;
                     $window.sessionStorage.token = data.token;
-                    $location.path('/admin');
-                }).
+                    console.log('token: ' + data.token);
+                    // $location.path('/admin');
+                })
 
-                error(function(status, data) {
+                .error(function (status, data) {
                     console.log('login error');
                 });
-
-            // $http({
-            //     method: 'POST',
-            //     url: '/login',
-            //     username: credentials.username,
-            //     password: credentials.password,
-            // }).
-            //     success(function(data, status, headers, config) {
-            //         console.log('login success');
-            //     }).
-            //
-            //     error(function(data, status, headers, config) {
-            //         console.log('login error');
-            //     });
         };
 
         $scope.logout = function () {
