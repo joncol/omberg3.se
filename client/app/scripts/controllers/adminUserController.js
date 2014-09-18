@@ -5,14 +5,12 @@ angular.module('clientApp')
         $scope.login = function (credentials) {
             UserService.login(credentials).
                 success(function (data) {
-                    console.log('login success');
                     AuthenticationService.isLoggedIn = true;
                     $window.sessionStorage.token = data.token;
                     console.log('token: ' + data.token);
                     $location.path('/admin');
                 }).
                 error(function (data) {
-                    console.log('login error');
                     $scope.message = data.message;
                 });
         };

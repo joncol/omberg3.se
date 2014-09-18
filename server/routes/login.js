@@ -3,8 +3,7 @@ module.exports = function (app, passport) {
     app.post('/login', function (req, res, next) {
         passport.authenticate('local', function (err, user, info) {
             if (err) {
-                console.log('There was an error');
-                return next(err);
+                return res.status(401).send({ message: "Unknown error" });
             }
             if (!user) {
                 return res.status(401).send({ message: info.message });
