@@ -2,20 +2,18 @@
 
 angular.module('clientApp')
     .controller('AdminUserCtrl', ['$scope', '$http', '$location', '$window', 'UserService', 'AuthenticationService', function ($scope, $http, $location, $window, UserService, AuthenticationService) {
-        $scope.message = 'yo bro';
-
         $scope.login = function (credentials) {
-            UserService.login(credentials)
-                .success(function (data) {
+            UserService.login(credentials).
+                success(function (data) {
                     console.log('login success');
                     AuthenticationService.isLoggedIn = true;
                     $window.sessionStorage.token = data.token;
                     console.log('token: ' + data.token);
-                    // $location.path('/admin');
-                })
-
-                .error(function (status, data) {
+                    $location.path('/admin');
+                }).
+                error(function (data) {
                     console.log('login error');
+                    $scope.message = data.message;
                 });
         };
 

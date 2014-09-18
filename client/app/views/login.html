@@ -6,7 +6,7 @@
       <button class="btn btn-large btn-primary" type="submit" ng-disabled="!loginForm.$valid">Logga in</button>
 
       <div class="login-message">
-        <span>
+        <span ng-if="message">
           Login message: {{message}}
         </span>
       </div>

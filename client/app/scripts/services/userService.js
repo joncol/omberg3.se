@@ -1,6 +1,6 @@
-var userService = angular.module("UserService", []);
+var userService = angular.module('UserService', []);
 
-userService.factory('UserService', function($http) {
+userService.factory('UserService', ['$http', function($http) {
     return {
         login: function(credentials) {
             return $http.post('/login', {
@@ -12,5 +12,5 @@ userService.factory('UserService', function($http) {
         logOut: function() {
         }
     }
-});
+}]);
 

@@ -4,6 +4,7 @@ var favicon = require("static-favicon");
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
+var expressSession = require("express-session");
 var passport = require("passport")
 var LocalStrategy = require("passport-local").Strategy
 var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy
@@ -23,10 +24,16 @@ app.use(logger("dev"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(expressSession({
+    secret: process.env.SESSION_SECRET || 'secret',
+    resave: false,
+    saveUninitialized: false
+}));
 
 function authSerializer(user, done) {
+    serializeLocalUser(user, done);
     // if (user.authType == "local")
-        serializeLocalUser(user, done);
+    //     serializeLocalUser(user, done);
 }
 
 function serializeLocalUser(user, done) {
