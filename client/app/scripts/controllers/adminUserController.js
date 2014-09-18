@@ -21,5 +21,9 @@ angular.module('clientApp')
                 delete $window.sessionStorage.token;
             }
         };
+
+        $scope.isLoggedIn = function () {
+            return AuthenticationService.isLoggedIn;
+        }
     }]);
 

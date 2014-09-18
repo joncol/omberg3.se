@@ -54,6 +54,7 @@ header img {
 
 .menu {
   width: 800px;
+  font-size: 0.9em;
   margin: 20px auto 0;
   border-radius: 5px;
   border: 1px solid;
@@ -188,20 +189,29 @@ header img {
   line-height: 1.4;
 }
 
-.gear-icon {
+.admin-menu {
   position: fixed;
   top: 0;
   left: 0;
-  // filter: brightness(50%);
+  width: 200px;
 }
 
-.gear-icon .dropdown span.glyphicon {
+.admin-menu .dropdown {
+  float: left;
+  clear: none;
+}
+
+.admin-menu span.glyphicon {
   color: #e9cbe0;
   font-size: 1.2em;
+  margin-right: 10px;
+  transition-property: color;
+  transition-duration: 0.5s;
 }
 
-.gear-icon .dropdown span.glyphicon:hover {
+.admin-menu span.glyphicon:hover {
   color: #bd67a4;
+  transition-duration: 0.5s;
 }
 
 .login-message {

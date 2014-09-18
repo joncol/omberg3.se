@@ -35,21 +35,27 @@
         <li id="stadgar" ng-class="{active: isActive('/stadgar')}"><a href="#/stadgar">Stadgar</a></li>
         <li id="bokning" ng-class="{active: isActive('/bokning')}"><a href="#/bokning">Bokning</a></li>
         <li id="kontakt" ng-class="{active: isActive('/kontakt')}"><a href="#/kontakt">Kontakt</a></li>
+        <li id="admin" ng-class="{active: isActive('/admin')}" ng-show="isLoggedIn()"><a href="#/admin">Admin</a></li>
       </ul>
     </div>
 
-    <div class="gear-icon">
+    <div class="admin-menu" ng-controller="AdminMenuCtrl">
       <div class="dropdown">
         <span class="glyphicon glyphicon-cog dropdown-toggle"
-          id="dropdownMenu1" data-toggle="dropdown"></span>
+          id="dropdownMenu1" data-toggle="dropdown"
+          data-tooltip="tooltip" data-placement="bottom" title="Admin-meny"></span>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="#/login">Admin login</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#/login" ng-show="!isLoggedIn()">Admin login</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#/logout" ng-show="isLoggedIn()">Admin logout</a></li>
           <!-- <li role="presentation"><a role="menuitem" tabindex="&#45;1" href="#">Another action</a></li> -->
           <!-- <li role="presentation"><a role="menuitem" tabindex="&#45;1" href="#">Something else here</a></li> -->
           <!-- <li role="presentation" class="divider"></li> -->
           <!-- <li role="presentation"><a role="menuitem" tabindex="&#45;1" href="#">Separated link</a></li> -->
         </ul>
       </div>
+      <a href="#/logout" data-toggle="tooltip" data-placement="right" title="Logga ut">
+        <span class="glyphicon glyphicon-log-out" ng-show="isLoggedIn()"/>
+      </a>
     </div>
 
     <div class="my-container">
@@ -115,7 +121,9 @@
     <script src="scripts/controllers/contactsController.js"></script>
     <script src="scripts/controllers/bookingController.js"></script>
     <script src="scripts/controllers/calendarController.js"></script>
+    <script src="scripts/controllers/adminMenuController.js"></script>
     <script src="scripts/controllers/adminUserController.js"></script>
+    <script src="scripts/controllers/adminLogoutController.js"></script>
     <script src="scripts/services/bookingService.js"></script>
     <script src="scripts/services/contactsService.js"></script>
     <script src="scripts/services/authenticationService.js"></script>

@@ -37,8 +37,6 @@ function authSerializer(user, done) {
 }
 
 function serializeLocalUser(user, done) {
-    console.log('in serializeLocalUser()');
-    console.log('  user.username: ' + user.username);
     done(null, {
         username: user.username,
         authType: user.authType,
@@ -47,30 +45,23 @@ function serializeLocalUser(user, done) {
 }
 
 function authDeserializer(user, done) {
-    console.log('in authDeserializer()');
     done(null, user);
 }
 
 passport.use(new LocalStrategy(function (username, password, done) {
-    console.log('In LocalStrategy');
-
     User.findOne({ username: username }, function (err, user) {
         if (err) {
-            console.log('Login failure');
             return done(err);
         }
 
         if (!user) {
-            console.log('Invalid username');
             return done(null, false, { message: "Ogiltigt användarnamn" });
         }
 
         if (user.password != password) {
-            console.log('Invalid password');
             return done(null, false, { message: "Ogiltigt lösenord" });
         }
 
-        console.log('Successfully logged in');
         return done(null, {
             username: user.username,
             authType: 'local',
