@@ -4,6 +4,7 @@ ipch/
 debug/
 dist/
 release/
+node_modules/
 
 *.DS_Store
 *.aps
