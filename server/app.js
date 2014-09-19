@@ -5,15 +5,10 @@ var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
 // var expressSession = require("express-session");
-var passport = require("passport")
-var LocalStrategy = require("passport-local").Strategy
-var GoogleStrategy = require("passport-google-oauth").OAuth2Strategy
-var mongoose = require("mongoose")
 
 var app = express();
 
 var booking = require("./routes/booking")(app);
-var User = require("./models/user.js")
 
 // view engine setup
 // app.set('views", path.join(__dirname, "views'));
@@ -30,53 +25,7 @@ app.use(cookieParser());
 //     saveUninitialized: false
 // }));
 
-function authSerializer(user, done) {
-    serializeLocalUser(user, done);
-    // if (user.authType == "local")
-    //     serializeLocalUser(user, done);
-}
-
-function serializeLocalUser(user, done) {
-    done(null, {
-        username: user.username,
-        authType: user.authType,
-        isAdmin: user.isAdmin
-    });
-}
-
-function authDeserializer(user, done) {
-    done(null, user);
-}
-
-passport.use(new LocalStrategy(function (username, password, done) {
-    User.findOne({ username: username }, function (err, user) {
-        if (err) {
-            return done(err);
-        }
-
-        if (!user) {
-            return done(null, false, { message: "Ogiltigt användarnamn" });
-        }
-
-        if (user.password != password) {
-            return done(null, false, { message: "Ogiltigt lösenord" });
-        }
-
-        return done(null, {
-            username: user.username,
-            authType: 'local',
-            isAdmin: true
-        });
-    });
-}));
-
-passport.serializeUser(authSerializer);
-passport.deserializeUser(authDeserializer);
-app.use(passport.initialize());
-app.use(passport.session());
-mongoose.connect("mongodb://localhost/omberg3Users")
-
-var login = require("./routes/login")(app, passport);
+require("./auth-setup")(app)
 
 /**
  * Development Settings

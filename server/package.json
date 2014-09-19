@@ -9,15 +9,16 @@
   "dependencies": {
     "body-parser": "~1.0.0",
     "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
     "express": "~4.9.1",
+    "jwt-simple": "^0.2.0",
     "mongoose": "^3.8.16",
     "morgan": "~1.0.0",
+    "ms": "~0.6.2",
     "passport": "^0.2.1",
     "passport-google-oauth": "^0.1.5",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^0.3.0",
-    "static-favicon": "~1.0.0",
-    "debug": "~0.7.4",
-    "ms": "~0.6.2"
+    "static-favicon": "~1.0.0"
   }
 }

@@ -2,8 +2,6 @@ var passport = require('passport')
 
 module.exports = function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
-        console.log('username: ' + user.username);
-
         if (err) {
             return res.status(401).send({ message: "Unknown error" });
         }
