@@ -193,7 +193,7 @@ header img {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px;
+  width: 64px;
 }
 
 .admin-menu .dropdown {
@@ -217,6 +217,11 @@ header img {
 .login-message {
   color: #f00;
   margin-top: 20px;
+}
+
+.tooltip.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 
 .form-signin {
