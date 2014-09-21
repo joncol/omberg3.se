@@ -19,6 +19,7 @@ angular
             'BookingService',
             'ContactsService',
             'AuthenticationService',
+            'AuthInterceptor',
             'UserService'
             ])
     .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
@@ -34,22 +35,33 @@ angular
                 pageTitle: 'Kontaktuppgifter'
             })
 
+            .when('/admin', {
+                access: { requiresLogin: true },
+                templateUrl: 'views/admin.html',
+                pageTitle: 'Administrering'
+            })
+
             .when('/:page', {
                 templateUrl: function (params) {
                     return 'views/' + params.page + '.html'
                 }
             })
 
-            // .when('/about', {
-            //   templateUrl: 'views/about.html',
-            //   controller: 'AboutCtrl'
-            // })
-
             .otherwise({
                 redirectTo: '/'
             });
-
-        // if (window.history && window.history.pushState) {
-        //     $locationProvider.html5Mode(true);
-        // }
+    }])
+    .run(['$rootScope', '$location', '$window', 'AuthenticationService', function ($rootScope, $location, $window, AuthenticationService) {
+        $rootScope.$on('$routeChangeStart', function (event, nextRoute, currentRoute) {
+            if (nextRoute.access && nextRoute.access.requiresLogin &&
+                !AuthenticationService.isLoggedIn &&
+                !$window.sessionStorage.token) {
+                console.log('Auth failed. Redirecting to login page');
+                $location.path('/login');
+            } else if (!AuthenticationService.isLoggedIn &&
+                       $window.sessionStorage.token) {
+                AuthenticationService.isLoggedIn = true;
+            }
+        });
     }]);
+

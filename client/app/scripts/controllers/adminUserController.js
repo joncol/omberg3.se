@@ -7,11 +7,9 @@ angular.module('clientApp')
                 success(function (data) {
                     AuthenticationService.isLoggedIn = true;
                     $window.sessionStorage.token = data.token;
-                    console.log('token: ' + data.token);
                     $location.path('/admin');
                 }).
                 error(function (data) {
-                    console.log('AdminUserCtrl: Login error');
                     $scope.message = data.message;
                 });
         };

@@ -4,16 +4,16 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var expressJwt = require('express-jwt');
 
 var app = express();
 
 var secret = require('./secret')
-app.use('/api/admin', expressJwt({secret: secret}));
+// app.use('/api/admin', jwt({secret: secret}));
 
 app.use(require('json-middleware').middleware());
 
-var booking = require('./routes/booking')(app);
+require('./routes/api')(app);
+require('./routes/booking')(app);
 
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));

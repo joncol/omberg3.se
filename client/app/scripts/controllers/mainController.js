@@ -8,18 +8,21 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('MainCtrl', function ($scope, $route, $routeParams) {
+  .controller('MainCtrl', ['$scope', '$route', '$routeParams', function ($scope, $route, $routeParams) {
       $scope.$on('$routeChangeSuccess', function (event, current, previous) {
-          $scope.pageTitle = $route.current.pageTitle ||
-            capitalizeFirstLetter($routeParams.page);
+          if ($route.current) {
+              $scope.pageTitle = $route.current.pageTitle ||
+                  capitalizeFirstLetter($routeParams.page);
+          }
       });
-  });
+  }]);
 
 function capitalizeFirstLetter(string)
 {
-    if (!string || string === "")
+    if (!string || string === "") {
         return "";
-    else
+    } else {
         return string.charAt(0).toUpperCase() + string.slice(1);
+    }
 }
 

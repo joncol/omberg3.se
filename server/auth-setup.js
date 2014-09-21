@@ -16,7 +16,7 @@ function serializeLocalUser(user, done) {
     done(null, {
         username: user.username,
         authType: user.authType,
-        isAdmin: user.isAdmin
+        admin: true
     });
 }
 
@@ -56,6 +56,7 @@ passport.use(new LocalStrategy(function (username, password, done) {
                     }
                     return done(null, {
                         username: user.username,
+                        admin: true
                     });
                 });
         }
