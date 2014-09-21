@@ -193,7 +193,10 @@ header img {
   position: fixed;
   top: 0;
   left: 0;
-  width: 64px;
+}
+
+.admin-menu .menu-item{
+  margin-right: 10px;
 }
 
 .admin-menu .dropdown {
@@ -201,15 +204,14 @@ header img {
   clear: none;
 }
 
-.admin-menu span.glyphicon {
+.admin-menu .glyphicon {
   color: #e9cbe0;
   font-size: 1.2em;
-  margin-right: 10px;
   transition-property: color;
   transition-duration: 0.5s;
 }
 
-.admin-menu span.glyphicon:hover {
+.admin-menu .glyphicon:hover {
   color: #bd67a4;
   transition-duration: 0.5s;
 }

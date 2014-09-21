@@ -11,6 +11,7 @@ angular.module('clientApp')
                     $location.path('/admin');
                 }).
                 error(function (data) {
+                    console.log('AdminUserCtrl: Login error');
                     $scope.message = data.message;
                 });
         };

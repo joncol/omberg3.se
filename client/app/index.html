@@ -40,10 +40,11 @@
     </div>
 
     <div class="admin-menu" ng-controller="AdminMenuCtrl">
-      <div class="dropdown">
+      <div class="menu-item dropdown">
         <span class="glyphicon glyphicon-cog dropdown-toggle"
           id="dropdownMenu1" data-toggle="dropdown"
-          data-tooltip="tooltip" data-placement="right" title="Admin-meny"></span>
+          data-tooltip="tooltip" data-placement="right" title="Admin-meny">
+        </span>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
           <li role="presentation"><a role="menuitem" tabindex="-1" href="#/login" ng-show="!isLoggedIn()">Admin login</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="#/logout" ng-show="isLoggedIn()">Admin logout</a></li>
@@ -54,7 +55,8 @@
         </ul>
       </div>
       <a href="#/logout" data-toggle="tooltip" data-placement="right" title="Logga ut">
-        <span class="glyphicon glyphicon-log-out" ng-show="isLoggedIn()"/>
+        <span class="menu-item glyphicon glyphicon-log-out" ng-show="isLoggedIn()">
+        </span>
       </a>
     </div>
 

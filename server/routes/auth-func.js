@@ -1,6 +1,8 @@
-var passport = require('passport')
+'use strict';
+
+var passport = require('passport');
 var jwt = require('jsonwebtoken');
-var secret = require('../secret')
+var secret = require('../secret');
 
 module.exports = function (req, res, next) {
     passport.authenticate('local', function (err, user, info) {
@@ -15,12 +17,12 @@ module.exports = function (req, res, next) {
         req.logIn(user, function (err) {
             if (err) {
                 return res.status(401).send({
-                    message: 'There was an error during req.logIn()'
+                    message: 'req.logIn() error: ' + err
                 });
             }
-            var token = jwt.sign(profile, secret, { expiresInMinutes: 60 * 5 });
+            var token = jwt.sign(user, secret, { expiresInMinutes: 60 * 5 });
             return res.json({ token: token });
         });
     })(req, res, next);
-}
+};
 

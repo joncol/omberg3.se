@@ -7,6 +7,8 @@
     "test": "NODE_ENV=development nodemon ./bin/www"
   },
   "dependencies": {
+    "bcrypt": "^0.8.0",
+    "bluebird": "^2.3.2",
     "body-parser": "~1.0.0",
     "cookie-parser": "~1.0.1",
     "debug": "~0.7.4",
