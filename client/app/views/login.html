@@ -5,8 +5,8 @@
       <input type="password" class="input-block-level" name="password" placeholder="Lösenord" ng-model="credentials.password" required>
       <button class="btn btn-large btn-primary" type="submit" ng-disabled="!loginForm.$valid">Logga in</button>
 
-      <div class="login-message">
-        <span ng-if="message">
+      <div class="login-message" ng-show="message">
+        <span>
           {{message}}
         </span>
       </div>
