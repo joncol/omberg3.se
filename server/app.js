@@ -7,17 +7,13 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-var secret = require('./secret')
+var secret = require('./secret');
 // app.use('/api/admin', jwt({secret: secret}));
 
 app.use(require('json-middleware').middleware());
 
 require('./routes/api')(app);
 require('./routes/booking')(app);
-
-// view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -40,10 +36,11 @@ if (app.get('env') === 'development') {
     // Error Handling
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: err
-        });
+        res.send('Error message: ' + err.message);
+        // res.render('error', {
+        //     message: err.message,
+        //     error: err
+        // });
     });
 }
 
@@ -59,10 +56,11 @@ if (app.get('env') === 'production') {
     // no stacktraces leaked to user
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
-        res.render('error', {
-            message: err.message,
-            error: {}
-        });
+        res.send('Error message: ' + err.message);
+        // res.render('error', {
+        //     message: err.message,
+        //     error: {}
+        // });
     });
 }
 

@@ -1,12 +1,19 @@
 'use strict';
 
 angular.module('clientApp')
-    .controller('AdminUserCtrl', ['$scope', '$http', '$location', '$window', 'UserService', 'AuthenticationService', function ($scope, $http, $location, $window, UserService, AuthenticationService) {
+    .controller('AdminUserCtrl', ['$scope', '$location', '$window',
+                'UserService', 'AuthenticationService',
+                function ($scope,
+                          $location,
+                          $window,
+                          UserService,
+                          AuthenticationService) {
         $scope.login = function (credentials) {
             UserService.login(credentials).
                 success(function (data) {
                     AuthenticationService.isLoggedIn = true;
                     $window.sessionStorage.token = data.token;
+                    // console.log('Token: ' + data.token);
                     $location.path('/admin');
                 }).
                 error(function (data) {
@@ -23,6 +30,6 @@ angular.module('clientApp')
 
         $scope.isLoggedIn = function () {
             return AuthenticationService.isLoggedIn;
-        }
+        };
     }]);
 

@@ -22,7 +22,7 @@ angular
             'AuthInterceptor',
             'UserService'
             ])
-    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'views/main.html',
@@ -43,7 +43,7 @@ angular
 
             .when('/:page', {
                 templateUrl: function (params) {
-                    return 'views/' + params.page + '.html'
+                    return 'views/' + params.page + '.html';
                 }
             })
 
