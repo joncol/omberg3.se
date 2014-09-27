@@ -1,7 +1,5 @@
-<div ng-controller="AdminUserCtrl">
-  <div class="main-content" ng-if="isLoggedIn()">
-    <h1>Admin</h1>
-    <button type="button">Migrera bokningar</button>
-  </div>
+<div class="main-content" ng-controller="AdminApiCtrl">
+  <h1>Admin</h1>
+  <button type="button" ng-click="migrateBookings()">Migrera bokningar</button>
 </div>
 
