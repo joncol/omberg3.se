@@ -46,12 +46,12 @@
           data-tooltip="tooltip" data-placement="right" title="Admin-meny">
         </span>
         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-          <li role="presentation" ng-class="{disabled: isLoggedIn()}"><a role="menuitem" tabindex="-1" href="#/login">Admin login</a></li>
-          <li role="presentation" ng-class="{disabled: !isLoggedIn()}"><a role="menuitem" tabindex="-1" href="#/logout">Admin logout</a></li>
-          <!-- <li role="presentation"><a role="menuitem" tabindex="&#45;1" href="#">Another action</a></li> -->
-          <!-- <li role="presentation"><a role="menuitem" tabindex="&#45;1" href="#">Something else here</a></li> -->
-          <!-- <li role="presentation" class="divider"></li> -->
-          <!-- <li role="presentation"><a role="menuitem" tabindex="&#45;1" href="#">Separated link</a></li> -->
+          <li role="presentation" ng-if="!isLoggedIn()">
+            <a role="menuitem" tabindex="-1" href="#/login">Admin login</a>
+          </li>
+          <li role="presentation" ng-if="isLoggedIn()">
+            <a role="menuitem" tabindex="-1" href="#/logout">Admin logout</a>
+          </li>
         </ul>
       </div>
       <a href="#/logout" data-toggle="tooltip" data-placement="right" title="Logga ut">
