@@ -377,6 +377,14 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.app %>/styles',
         dest: '.tmp/styles/',
         src: '{,*/}*.css'
+      },
+      bootstrap: {
+          expand: true,
+          cwd: '<%= yeoman.app %>/..',
+          dest: '<%= yeoman.dist %>/',
+          src: [
+              'bower_components/bootstrap/dist/**/*.*'
+          ]
       }
     },
 
@@ -442,6 +450,7 @@ module.exports = function (grunt) {
     'concat',
     'ngmin',
     'copy:dist',
+    'copy:bootstrap',
     'cdnify',
     'cssmin',
     'uglify',
