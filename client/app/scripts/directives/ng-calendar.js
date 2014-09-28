@@ -14,10 +14,12 @@
                 var room = scope.room;
 
                 function updateCalendar(calendar, today) {
-                    var firstCalendarDate = getFirstCalendarDate(today);
+                    var timeMin = getFirstCalendarDate(today);
+                    var timeMax = moment(today).add(1, 'months').date(1);
+
                     bookings = BookingService.query({
-                        timeMin: firstCalendarDate.format(),
-                        timeMax: firstCalendarDate.add(1, 'months').format(),
+                        timeMin: timeMin.format(),
+                        timeMax: timeMax.format(),
                         room: room
                     }).$promise.then(
                         function (bookings) {
