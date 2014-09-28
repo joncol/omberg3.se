@@ -38,7 +38,7 @@ angular
             .when('/admin', {
                 access: { requiresLogin: true },
                 templateUrl: 'views/admin.html',
-                pageTitle: 'Administrering'
+                pageTitle: 'Admin'
             })
 
             .when('/:page', {

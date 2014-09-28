@@ -4,6 +4,8 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var session = require('express-session');
+var passport = require('passport');
 
 var app = express();
 
@@ -12,16 +14,26 @@ var secret = require('./secret');
 
 app.use(require('json-middleware').middleware());
 
-require('./routes/api')(app);
-require('./routes/booking')(app);
-
 app.use(favicon());
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded());
 app.use(cookieParser());
+app.use(bodyParser());
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded());
+app.use(session({
+    secret: secret,
+    resave: true,
+    saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 require('./auth-setup')(app)
+
+require('./routes/api')(app);
+require('./routes/booking')(app);
+require('./routes/google-auth')(app);
 
 /**
  * Development Settings
