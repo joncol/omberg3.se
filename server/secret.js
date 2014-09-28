@@ -1,2 +1,4 @@
-module.exports = process.env.SERVER_SECRET || 'secret'
+SERVER_SECRET = process.env.SERVER_SECRET || 'secret'
+GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID
+GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET
 

@@ -9,8 +9,7 @@ var passport = require('passport');
 
 var app = express();
 
-var secret = require('./secret');
-// app.use('/api/admin', jwt({secret: secret}));
+require('./secret');
 
 app.use(require('json-middleware').middleware());
 
@@ -21,7 +20,7 @@ app.use(bodyParser());
 // app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded());
 app.use(session({
-    secret: secret,
+    secret: SERVER_SECRET,
     resave: true,
     saveUninitialized: true
 }));

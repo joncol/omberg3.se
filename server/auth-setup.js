@@ -2,8 +2,7 @@
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var GoogleStrategy = require('passport-google').Strategy;
-// var GoogleOauth2Strategy = require('passport-google-oauth').OAuth2Strategy;
+var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var promise = require('bluebird');
 var mongoose = require('mongoose');
 var User = require('./models/user');
@@ -69,9 +68,11 @@ passport.use(new LocalStrategy(function (username, password, done) {
 }));
 
 passport.use(new GoogleStrategy({
-  returnURL: 'http://localhost:3000/auth/google/return',
-  realm: 'http://localhost:3000'
-}, function (identifier, profile, done) {
+    clientID: GOOGLE_CLIENT_ID,
+    clientSecret: GOOGLE_CLIENT_SECRET,
+    callbackURL: 'http://localhost:3000/auth/google/callback'
+}, function (accessToken, refreshToken, profile, done) {
+    console.log('In GoogleStrategy');
     // var cal = new gcal.GoogleCalendar(accessToken);
     inspect(profile);
     return done(null, profile);
