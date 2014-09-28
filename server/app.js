@@ -16,9 +16,9 @@ app.use(require('json-middleware').middleware());
 app.use(favicon());
 app.use(logger('dev'));
 app.use(cookieParser());
-app.use(bodyParser());
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded());
+// app.use(bodyParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded());
 app.use(session({
     secret: SERVER_SECRET,
     resave: true,
@@ -30,8 +30,7 @@ app.use(passport.session());
 
 require('./auth-setup')(app)
 
-require('./routes/api')(app);
-require('./routes/booking')(app);
+require('./routes/booking-api')(app);
 require('./routes/google-auth')(app);
 
 /**

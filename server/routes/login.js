@@ -2,7 +2,7 @@
 
 var passport = require('passport');
 var jwt = require('jsonwebtoken');
-var secret = require('../secret');
+require('../secret');
 
 function localAuth(req, res, next) {
     passport.authenticate('local', function (err, user, info) {
@@ -20,7 +20,7 @@ function localAuth(req, res, next) {
                     message: 'req.logIn() error: ' + err
                 });
             }
-            var token = jwt.sign(user, secret, { expiresInMinutes: 60 * 5 });
+            var token = jwt.sign(user, SERVER_SECRET, { expiresInMinutes: 60 * 5 });
             return res.json({ token: token });
         });
     })(req, res, next);

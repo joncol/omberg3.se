@@ -7,7 +7,7 @@ var promise = require('bluebird');
 var mongoose = require('mongoose');
 var User = require('./models/user');
 var jwt = require('jsonwebtoken');
-var secret = require('./secret');
+require('./secret');
 var gcal = require("googleapis").calendar("v3");
 var inspect = require('eyes').inspector({ maxLength: 16384 });
 
