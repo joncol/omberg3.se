@@ -3,8 +3,6 @@
 (function () {
     var directive = ['$compile', 'BookingService', '$filter',
         function ($compile, BookingService) {
-            var bookings;
-
             function controller($scope) {
             }
 
@@ -17,7 +15,7 @@
                     var timeMin = getFirstCalendarDate(today);
                     var timeMax = moment(today).add(1, 'months').date(1);
 
-                    bookings = BookingService.query({
+                    var bookings = BookingService.query({
                         timeMin: timeMin.format(),
                         timeMax: timeMax.format(),
                         room: room

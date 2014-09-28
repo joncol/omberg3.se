@@ -61,7 +61,7 @@ module.exports = function (app) {
                                 var bookings = [];
 
                                 events[0].items.forEach(function (e) {
-                                    if (!e.summary.match(new RegExp(room))) {
+                                    if (room && (!e.summary || !e.summary.match(new RegExp(room)))) {
                                         return; // wrong room, continue
                                     }
 

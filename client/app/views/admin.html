@@ -1,5 +1,8 @@
 <div class="main-content" ng-controller="AdminApiCtrl">
   <h1>Admin</h1>
   <button type="button" ng-click="getBookings()">Hämta bokningar</button>
+  <pre>
+    {{bookings | json}}
+  </pre>
 </div>
 
