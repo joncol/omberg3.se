@@ -5,7 +5,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 var promise = require('bluebird');
 var mongoose = require('mongoose');
-var User = require("./models/user.js");
+var User = require('./models/user');
 var jwt = require('jsonwebtoken');
 var secret = require('./secret');
 
@@ -32,13 +32,15 @@ function authDeserializer(user, done) {
 
 passport.use(new LocalStrategy(function (username, password, done) {
     User.findOne({ username: username }, function (err, user) {
-        if (err) { return done(err); }
+        if (err) {
+            return done(err);
+        }
 
         if (!user) {
             return done(null, false, { message: 'Ogiltigt användarnamn' });
         }
 
-        if (user.password === '') {
+        if (!user.password || user.password === '') {
             // no password, assume admin user has just been created and set
             // new password
             user.password = password;
@@ -68,7 +70,8 @@ module.exports = function (app) {
     passport.deserializeUser(authDeserializer);
     app.use(passport.initialize());
     app.use(passport.session());
-    mongoose.connect('mongodb://localhost/omberg3Users');
+    var db = process.env.OMBERG3_DB || 'omberg3';
+    mongoose.connect('mongodb://localhost/' + db);
 
     require('./routes/login')(app, passport);
 };

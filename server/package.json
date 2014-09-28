@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "NODE_ENV=production nodemon ./bin/www",
-    "test": "NODE_ENV=development nodemon ./bin/www"
+    "start-dev": "NODE_ENV=development nodemon ./bin/www",
+    "test": "mocha"
   },
   "dependencies": {
     "bcrypt": "^0.8.0",
@@ -14,6 +15,7 @@
     "debug": "~0.7.4",
     "express": "~4.9.1",
     "express-jwt": "^0.3.2",
+    "eyes": "^0.1.8",
     "json-middleware": "^1.0.2",
     "jsonwebtoken": "^1.1.2",
     "mongoose": "^3.8.16",
@@ -24,5 +26,9 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^0.3.0",
     "static-favicon": "~1.0.0"
+  },
+  "devDependencies": {
+    "should": "^4.0.4",
+    "supertest": "^0.13.0"
   }
 }
