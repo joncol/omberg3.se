@@ -74,7 +74,7 @@ module.exports = function (app) {
 
                                     var endDate;
                                     if (e.end.dateTime) {
-                                        endDate = moment(e.start.dateTime);
+                                        endDate = moment(e.end.dateTime);
                                     } else {
                                         endDate = moment(e.end.date);
                                     }
@@ -85,7 +85,7 @@ module.exports = function (app) {
                                         endDate: endDate.format('YYYY-MM-DD')
                                     });
                                 });
-                                // inspect(bookings)
+                                inspect(bookings)
                                 // console.log('Room: ' + room);
                                 // console.log('Booking count: ', bookings.length);
                                 res.json(bookings);
