@@ -24,12 +24,20 @@
         "phone": "0760-833517"
     },
     {
-        "name": "Matilda Lindén",
-        "image": "matilda.jpg",
-        "description": "Uppgång C",
-        "mail1": "am (punkt) matilda (punkt) linden (at) gmail (punkt) com",
-        "mail2": "matilda (punkt) linden (at) omberg3 (punkt) se",
-        "phone": "076-1128358"
+        "name": "Martin Elfast Johansson",
+        "image": "",
+        "description": "Uppgång H",
+        "mail1": "martin.elfast@yahoo.se",
+        "mail2": "",
+        "phone": ""
+    },
+    {
+        "name": "Mikael Skoog",
+        "image": "",
+        "description": "Uppgång N",
+        "mail1": "mikael (at) gelnet (punkt) se",
+        "mail2": "",
+        "phone": "070-8296952"
     },
     {
         "name": "Lennart Falk",
