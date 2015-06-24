@@ -1,8 +1,14 @@
-To start server:
+Rebuilding Site
+---------------
+
+    grunt build:dist --force
+
+Start Server
+------------
 
     forever start -c "npm start" .
 
-Client:
+Start Client
+------------
 
-    grunt serve:dist --force --port=6000
-
+    grunt serve:dist --force
