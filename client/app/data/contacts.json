@@ -16,28 +16,28 @@
         "phone": "073-3266134"
     },
     {
-        "name": "Jonas Collberg",
-        "image": "jonas.jpg",
-        "description": "Uppgång I",
-        "mail1": "jonas (punkt) collberg (at) gmail (punkt) com",
-        "mail2": "jonas (punkt) collberg (at) omberg3 (punkt) se",
-        "phone": "0760-833517"
-    },
-    {
-        "name": "Martin Elfast Johansson",
-        "image": "",
-        "description": "Uppgång H",
-        "mail1": "martin.elfast@yahoo.se",
-        "mail2": "",
-        "phone": ""
-    },
-    {
         "name": "Mikael Skoog",
         "image": "",
         "description": "Uppgång N",
         "mail1": "mikael (at) gelnet (punkt) se",
         "mail2": "",
         "phone": "070-8296952"
+    },
+    {
+        "name": "Lisa Albinsson Fimreite",
+        "image": "",
+        "description": "Uppgång K",
+        "mail1": "Lisa (punkt) Fimreite (at) telia (punkt) com",
+        "mail2": "",
+        "phone": ""
+    },
+    {
+        "name": "Sofia Rosendahl",
+        "image": "",
+        "description": "Uppgång J",
+        "mail1": "sofiarosendahl (at) hotmail (punkt) com",
+        "mail2": "",
+        "phone": ""
     },
     {
         "name": "Lennart Falk",
