@@ -32,7 +32,6 @@
         "responsibilities": "Ekonomi, låsansvar, skadedjurshantering",
         "image": "lisa.jpg",
         "email": "lisa (punkt) fimreite (at) omberg3 (punkt) se",
-        "phone": "",
         "address": "K"
     },
     {
@@ -41,18 +40,14 @@
         "responsibilities": "Lapphantering, trivselfrågor",
         "image": "sofia.jpg",
         "email": "sofia (punkt) rosendahl (at) omberg3 (punkt) se",
-        "phone": "",
         "address": "J"
     },
     {
         "name": "Lennart Falk",
         "role": "HSB-representant",
-        "responsibilities": "",
         "image": "lennart.jpg",
         "description": "Representant HSB",
-        "email": "lennart (punkt) falk (at) gbg (punkt) hsb (punkt) se",
-        "phone": "",
-        "address": ""
+        "email": "lennart (punkt) falk (at) gbg (punkt) hsb (punkt) se"
     }
 ]
 

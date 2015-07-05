@@ -11,23 +11,17 @@
       {{person.name}} ({{person.role}})
 
       <dl>
-        <div ng-if="person.responsibilities">
-          <dt>Ansvarsområden</dt>
-          <dd>{{person.responsibilities}}</dd>
-        </div>
+        <dt ng-if="person.responsibilities">Ansvarsområden</dt>
+        <dd ng-if="person.responsibilities">{{person.responsibilities}}</dd>
 
         <dt>Mail</dt>
         <dd>{{person.email}}</dd>
 
-        <div ng-if="person.phone">
-          <dt>Mobil</dt>
-          <dd>{{person.phone}}</dd>
-        </div>
+        <dt ng-if="person.phone">Mobil</dt>
+        <dd ng-if="person.phone">{{person.phone}}</dd>
 
-        <div ng-if="person.address">
-          <dt>Uppgång</dt>
-          <dd>{{person.address}}</dd>
-        </div>
+        <dt ng-if="person.address">Uppgång</dt>
+        <dd ng-if="person.address">{{person.address}}</dd>
       </dl>
     </div>
   </div>
