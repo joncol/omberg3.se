@@ -7,8 +7,8 @@
   <div class="contacts" ng-controller="ContactsCtrl">
     <div class = "contact" ng-repeat="person in contacts">
       <image ng-src="images/{{person.image}}" ng-if="person.image"/>
-      <div class="contact-row"><u>{{person.name}}</u></div>
-      <div class="contact-row">{{person.description}}</div>
+      <div class="contact-row"><u>{{person.name}}</u> ({{person.role}})</div>
+      <div class="contact-row" ng-if="person.responsibilities">Ansvarsområden: {{person.responsibilities}}</div>
       <div class="contact-row" ng-if="person.mail1">Mail: {{person.mail1}}</div>
       <div class="contact-row" ng-if="person.mail2">Mail: {{person.mail2}}</div>
       <div class="contact-row" ng-if="person.phone">Mobil: {{person.phone}}</div>
