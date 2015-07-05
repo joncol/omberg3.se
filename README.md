@@ -1,3 +1,8 @@
+Installation
+------------
+* Install node.js
+* Go to the client directory and run: `npm install`
+
 Rebuilding Site
 ---------------
 

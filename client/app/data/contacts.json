@@ -1,52 +1,48 @@
 [
     {
         "name": "Fredrik Söderqvist",
-        "role": "Ordförande",
+        "role": "ordförande",
         "responsibilities": "Fastighet, underhållsgruppen",
         "image": "fredrik.jpg",
-        "address": "Uppgång J",
-        "mail1": "fredrik (punkt) soderqvist (at) omberg3 (punkt) se",
-        "mail2": "",
-        "phone": "0706-690897"
+        "email": "fredrik (punkt) soderqvist (at) omberg3 (punkt) se",
+        "phone": "0706-690897",
+        "address": "J"
     },
     {
         "name": "David Elmqvist",
-        "role": "Sekreterare",
+        "role": "sekreterare",
         "responsibilities": "Andrahandsuthyrning, TV/bredband/telefoni, tvättstugan, klottersanering, Ombergsbladet",
         "image": "david.jpg",
-        "address": "Uppgång E",
-        "mail1": "david (punkt) elmqvist (at) omberg3 (punkt) se",
-        "mail2": "",
-        "phone": "073-3266134"
+        "email": "david (punkt) elmqvist (at) omberg3 (punkt) se",
+        "phone": "073-3266134",
+        "address": "E"
     },
     {
         "name": "Mikael Skoog",
-        "role": "Vice ordförande",
+        "role": "vice ordförande",
         "responsibilities": "Fastighet, fönster",
         "image": "mikael.jpg",
-        "address": "Uppgång N",
-        "mail1": "mikael (punkt) skoog (at) omberg3 (punkt) se",
-        "mail2": "",
-        "phone": "070-8296952"
+        "email": "mikael (punkt) skoog (at) omberg3 (punkt) se",
+        "phone": "070-8296952",
+        "address": "N"
     },
     {
         "name": "Lisa Albinsson Fimreite",
-        "role": "Ekonomi",
+        "role": "ekonomi",
         "responsibilities": "Ekonomi, låsansvar, skadedjurshantering",
         "image": "lisa.jpg",
-        "address": "Uppgång K",
-        "mail1": "lisa (punkt) fimreite (at) omberg3 (punkt) se",
-        "mail2": "",
-        "phone": ""
+        "email": "lisa (punkt) fimreite (at) omberg3 (punkt) se",
+        "phone": "",
+        "address": "K"
     },
     {
         "name": "Sofia Rosendahl",
-        "role": "Administration",
-        "responsibilities": "Lapphantering, trivselfrågor (uppgång J)",
+        "role": "administration",
+        "responsibilities": "Lapphantering, trivselfrågor",
         "image": "sofia.jpg",
-        "mail1": "sofia (punkt) rosendahl (at) omberg3 (punkt) se",
-        "mail2": "",
-        "phone": ""
+        "email": "sofia (punkt) rosendahl (at) omberg3 (punkt) se",
+        "phone": "",
+        "address": "J"
     },
     {
         "name": "Lennart Falk",
@@ -54,9 +50,9 @@
         "responsibilities": "",
         "image": "lennart.jpg",
         "description": "Representant HSB",
-        "mail1": "lennart (punkt) falk (at) gbg (punkt) hsb (punkt) se",
-        "mail2": "",
-        "phone": ""
+        "email": "lennart (punkt) falk (at) gbg (punkt) hsb (punkt) se",
+        "phone": "",
+        "address": ""
     }
 ]
 

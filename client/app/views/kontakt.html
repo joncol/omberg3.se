@@ -5,13 +5,30 @@
   </p>
 
   <div class="contacts" ng-controller="ContactsCtrl">
-    <div class = "contact" ng-repeat="person in contacts">
+    <div class="contact" ng-repeat="person in contacts">
       <image ng-src="images/{{person.image}}" ng-if="person.image"/>
-      <div class="contact-row"><u>{{person.name}}</u> ({{person.role}})</div>
-      <div class="contact-row" ng-if="person.responsibilities">Ansvarsområden: {{person.responsibilities}}</div>
-      <div class="contact-row" ng-if="person.mail1">Mail: {{person.mail1}}</div>
-      <div class="contact-row" ng-if="person.mail2">Mail: {{person.mail2}}</div>
-      <div class="contact-row" ng-if="person.phone">Mobil: {{person.phone}}</div>
+
+      {{person.name}} ({{person.role}})
+
+      <dl>
+        <div ng-if="person.responsibilities">
+          <dt>Ansvarsområden</dt>
+          <dd>{{person.responsibilities}}</dd>
+        </div>
+
+        <dt>Mail</dt>
+        <dd>{{person.email}}</dd>
+
+        <div ng-if="person.phone">
+          <dt>Mobil</dt>
+          <dd>{{person.phone}}</dd>
+        </div>
+
+        <div ng-if="person.address">
+          <dt>Uppgång</dt>
+          <dd>{{person.address}}</dd>
+        </div>
+      </dl>
     </div>
   </div>
 </div>

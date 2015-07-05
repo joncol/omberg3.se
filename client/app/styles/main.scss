@@ -162,7 +162,7 @@ header img {
   background-color: #ddc;
   padding: 10px 10px;
   width: 600px;
-  height: 120px;
+  min-height: 120px;
 }
 
 .contact img {
@@ -171,27 +171,29 @@ header img {
   margin-right: 10px;
 }
 
-.contact h1 {
-  margin: 13px 10px 4px;
-  padding-bottom: 10px;
-  border-bottom: 1px dotted #ddd;
-  border-radius: 2px 2px 0px 0px;
-  margin-bottom: 10px;
-}
-
-.contact h2 {
-  font-family: 'Lora', serif;
-  font-style: italic;
-  font-size: 1.2em;
-  margin: 20px 10px 10px;
-}
-
-.contact .contact-row {
+.contacts dl dt, .contacts dl dd {
   font-family: 'Lora', serif;
   font-size: 0.8em;
-  margin: 0px 10px;
-  margin-right: 10px;
   line-height: 1.4;
+}
+
+.contacts dl {
+  overflow: hidden;
+  margin-bottom: 0px;
+}
+
+.contacts dl dt {
+  float: left;
+  width: 30%;
+}
+
+.contacts dl dt:after {
+  content: ':';
+}
+
+.contacts dl dd {
+  float: left;
+  width: 70%;
 }
 
 .admin-menu {
@@ -200,7 +202,7 @@ header img {
   left: 0;
 }
 
-.admin-menu .menu-item{
+.admin-menu .menu-item {
   margin-right: 10px;
 }
 
